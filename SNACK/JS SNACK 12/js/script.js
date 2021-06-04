@@ -4,10 +4,12 @@ var listName = ["Federico","Seba","Andrea","Elisa","Paolo","Luca"];
 var listSurname = ["Musso","Rizzo","Boccia","Boido","Bonolis","Laurenti"];
 var list = [];
 
-for ( var i = 1; i <= 3; i++) {
-
-  list.push(listName[Math.floor(Math.random() * listName.length)] + ' ' + listSurname[Math.floor(Math.random() * listSurname.length)]);
-
+while (list.length < 3){
+  var invitato = (listName[Math.floor(Math.random() * listName.length)] + ' ' + listSurname[Math.floor(Math.random() * listSurname.length)]);
+  if(!list.includes(invitato)){
+    list.push(invitato);
+    document.getElementById('demo').innerHTML += '<li>' +  invitato + '</li>';
+  }
 }
-  document.getElementById('demo').innerHTML = list;
-  console.log(list);
+
+console.log(list);
